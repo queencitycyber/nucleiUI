@@ -3,6 +3,7 @@
 ## 🔥 What is NucleiUI?
 
 **NucleiUI** is a powerful, browser-based visualization tool for your [Nuclei](https://github.com/projectdiscovery/nuclei) scan results!  
+
 No more staring at raw JSON files or scrolling through endless terminal output. With NucleiUI, you can upload your scan results and instantly get **beautiful, interactive visualizations** that help you understand your security findings better.
 
 > 🎯 _Shoot First. View Scans Later._
@@ -15,26 +16,10 @@ No more staring at raw JSON files or scrolling through endless terminal output. 
 ## 🚀 Getting Started
 
 ### Option 1: Use the Live Version
-👉 Visit the [Live Demo]([https://github.com/queencitycyber/nucleiUI](https://queencitycyber.github.io/nucleiUI/)) to use NucleiUI directly in your browser!
+👉 Visit the [Live Demo](https://github.com/queencitycyber/nucleiUI) to use NucleiUI directly in your browser!
 
 ### Option 2: Run Locally
 
-```bash
-# Clone the repository
-git clone https://github.com/queencitycyber/nucleiUI.git
-
-# Navigate to the project directory
-cd nucleiUI
-
-# Open index.html in your browser
-# OR use a local server:
-
-# Python 3
-python -m http.server
-
-# Node.js with http-server
-npx http-server
-```
 
 ## ✨ Features
 
@@ -65,13 +50,9 @@ Because your eyes deserve better at 3am hunting that bug 🕶️
 
 ## 📋 How to Use
 1. Upload your Nuclei JSON results by drag-and-drop or using the file browser
-
 2. Explore the visualizations in the dashboard
-
 3. Use filtering and search to focus on specific findings
-
 4. Click on any finding to view detailed information, including request/response data
-
 5. Export your results as JSON, CSV, or HTML
 
 > 🧪 Don’t have scan results handy? Click the "Load Example Data" button to try it with sample findings.
