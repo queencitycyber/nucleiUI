@@ -12,33 +12,6 @@ No more staring at raw JSON files or scrolling through endless terminal output. 
 ![example_dash](assets/example_image.png)
 ![example_details](assets/example_details.png)
 
-## ✨ Features
-
-### 📊 Visual Charts & Statistics
-- Severity breakdown charts — instantly see **critical**, **high**, **medium**, **low**, and **info** findings
-- Top tags visualization — identify recurring vulnerability patterns
-- Interactive statistics — click and filter to drill down into specific data
-
-### 🔍 Advanced Search & Filtering
-- Deep search across **ALL** data (including request/response content!)
-- Filter by severity to focus on what matters most
-- Tag-based filtering to group related vulnerabilities
-- Text search to find specific hosts, templates, or vulnerability names
-
-### 📤 Export Options
-- **JSON** export — for further processing or automation
-- **CSV** export — ideal for spreadsheet analysis
-- **HTML report** — beautiful, shareable, and perfect for teams or clients
-
-### 🌙 Dark Mode
-Because your eyes deserve better at 3am during a pentest 🕶️
-
-### 🔒 Privacy Focused
-- 100% **client-side** — your data never leaves your browser
-- No server required — everything happens locally
-
----
-
 ## 🚀 Getting Started
 
 ### Option 1: Use the Live Version
@@ -62,6 +35,31 @@ python -m http.server
 # Node.js with http-server
 npx http-server
 ```
+
+## ✨ Features
+
+### 📊 Visual Charts & Statistics
+- Severity breakdown charts — instantly see **critical**, **high**, **medium**, **low**, and **info** findings
+- Top tags visualization — identify recurring vulnerability patterns
+- Interactive statistics — click and filter to drill down into specific data
+
+### 🔍 Advanced Search & Filtering
+- Deep search across **ALL** data (including request/response content!)
+- Filter by severity to focus on what matters most
+- Tag-based filtering to group related vulnerabilities
+- Text search to find specific hosts, templates, or vulnerability names
+
+### 📤 Export Options
+- **JSON** export — for further processing or automation
+- **CSV** export — ideal for spreadsheet analysis
+- **HTML report** — beautiful, shareable, and perfect for teams or clients
+
+### 🌙 Dark Mode
+Because your eyes deserve better at 3am hunting that bug 🕶️
+
+### 🔒 Privacy Focused
+- 100% **client-side** — your data never leaves your browser
+
 
 ---
 
