@@ -9,6 +9,9 @@ No more staring at raw JSON files or scrolling through endless terminal output. 
 
 ---
 
+![example_dash](assets/example_image.png)
+![example_details](assets/example_details.png)
+
 ## ✨ Features
 
 ### 📊 Visual Charts & Statistics
