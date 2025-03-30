@@ -1,0 +1,7 @@
+<svg width="260" height="48" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="260" height="48" rx="8" fill="#0f172a"/>
+  <g transform="translate(16, 12)">
+    <path d="M6 0L0 10H5L2 20L10 8H6L9 0H6Z" fill="#6366f1"/>
+    <text x="24" y="16" fill="white" font-family="Segoe UI, sans-serif" font-size="18" font-weight="600">NucleiUI</text>
+  </g>
+</svg>

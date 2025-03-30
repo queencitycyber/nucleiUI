@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NucleiUI - Scan Results Viewer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <nav class="main-nav">
+      <div class="nav-logo">
+        <a href="#" id="home-link">
+          <img src="assets/nucleiui-logo-wide.svg" alt="NucleiUI Logo" class="nav-logo-img" />
+          <span class="nucleiui-brand">NucleiUI</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="#" id="nav-home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+        <a href="https://docs.projectdiscovery.io/tools/nuclei" target="_blank" class="nav-link"><i class="fas fa-book"></i> Nuclei Docs</a>
+        <a href="https://github.com/queencitycyber/nucleiUI" target="_blank" class="nav-link"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+    </nav>
+
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-content text-center">
+          <div class="logo-container" style="width: 100%;">
+              <a href="/" class="logo-link" style="display: flex; align-items: center; justify-content: center; width: 100%;">
+                  <svg width="100%" height="60" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                    <rect width="260" height="48" rx="8" fill="#0f172a"/>
+                    <g transform="translate(16, 12)">
+                      <path d="M6 0L0 10H5L2 20L10 8H6L9 0H6Z" fill="#6366f1"/>
+                      <text x="24" y="16" fill="white" font-family="Segoe UI, sans-serif" font-size="18" font-weight="600">NucleiUI</text>
+                    </g>
+                  </svg>
+                </a>              
+          </div>
+        <h1 class="landing-title">Shoot First. View Scans Later.</h1>
+        <p class="welcome-description">
+          <strong>NucleiUI</strong> helps you explore and understand your Nuclei scan results with clarity and speed.
+        </p>
+        <div class="dual-option-flow vertical-stack">
+            <div class="upload-container welcome-upload" id="upload-container">
+              <div class="upload-area">
+                <i class="fas fa-file-upload"></i>
+                <h2>Upload JSON File</h2>
+                <p>Drop your Nuclei scan results JSON file here or browse from your device.</p>
+                <input type="file" id="file-upload" accept=".json" />
+                <button class="browse-btn">Browse Files</button>
+              </div>
+            </div>
+          
+            <div class="try-demo-cta" style="margin-bottom: 3rem;">
+              <p class="try-pitch">Not convinced?</p>
+              <p class="try-desc">Try our example scan data. It actually really works.</p>
+              <button id="load-example-data" class="example-data-btn sleek-btn center-btn" style="font-size: 1.1rem; padding: 12px 24px; margin-top: 1rem;">
+                <i class="fas fa-bolt"></i> Load Example Data
+              </button>
+            </div>
+          </div>
+          
+        <div class="features-container modern">
+          <div class="feature-card">
+            <i class="fas fa-chart-pie"></i>
+            <h3>Visual Charts</h3>
+            <p>Severity breakdowns, tag trends, and more.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-filter"></i>
+            <h3>Advanced Filters</h3>
+            <p>Search by tags, severity, text, and more.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-file-export"></i>
+            <h3>Export Ready</h3>
+            <p>Download filtered results as JSON, CSV, or HTML.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-moon"></i>
+            <h3>Dark Mode</h3>
+            <p>Because your eyes deserve better at 3am.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-search"></i>
+            <h3>Deep Search</h3>
+            <p>Quickly search across all request/response data.</p>
+          </div>          
+          <div class="feature-card">
+            <i class="fas fa-globe"></i>
+            <h3>Privacy Focused</h3>
+            <p>Everything happens in the browser, no data leaves your machine.</p>
+          </div>
+        </div>
+        <div class="project-info center">
+          <p>
+            <i class="fas fa-code"></i> Built with ❤️ by <a href="https://github.com/queencitycyber" target="_blank">queencitycyber</a> •
+            <a href="https://github.com/queencitycyber/nucleiUI" target="_blank">View on GitHub</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="results-view" class="results-view" style="display: none;">
+      <header class="results-header">
+        <div class="header-left">
+          <h1>Scan Results</h1>
+          <div class="file-info"><i class="fas fa-file-alt"></i><span id="file-name">No file loaded</span></div>
+        </div>
+        <div class="header-right">
+          <div class="controls">
+            <div class="search-container"><input type="text" id="search" placeholder="Search..." /><i class="fas fa-search"></i></div>
+            <div class="filter-container">
+              <select id="severity-filter">
+                <option value="all">All Severities</option>
+                <option value="critical">Critical</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+                <option value="info">Info</option>
+              </select>
+              <input type="text" id="tag-filter" placeholder="Filter by tag" />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="results-actions">
+        <button id="back-to-home" class="action-btn"><i class="fas fa-home"></i> Home</button>
+        <button id="upload-new-file" class="action-btn"><i class="fas fa-file-upload"></i> Upload New File</button>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item total"><span class="stat-value" id="total-findings">0</span><span class="stat-label">Total</span></div>
+        <div class="stat-item critical"><span class="stat-value" id="critical-count">0</span><span class="stat-label">Critical</span></div>
+        <div class="stat-item high"><span class="stat-value" id="high-count">0</span><span class="stat-label">High</span></div>
+        <div class="stat-item medium"><span class="stat-value" id="medium-count">0</span><span class="stat-label">Medium</span></div>
+        <div class="stat-item low"><span class="stat-value" id="low-count">0</span><span class="stat-label">Low</span></div>
+        <div class="stat-item info"><span class="stat-value" id="info-count">0</span><span class="stat-label">Info</span></div>
+        <div class="stat-item filtered"><span class="stat-value" id="filtered-count">0</span><span class="stat-label">Filtered</span></div>
+      </div>
+
+      <div class="charts-container">
+        <div class="chart-card"><h3>Findings by Severity</h3><canvas id="severity-chart"></canvas></div>
+        <div class="chart-card"><h3>Top 10 Tags</h3><canvas id="tags-chart"></canvas></div>
+      </div>
+
+      <div class="export-bar">
+        <div class="export-options">
+          <select id="export-format">
+            <option value="json">JSON</option>
+            <option value="csv">CSV</option>
+            <option value="html">HTML Report</option>
+          </select>
+          <label class="export-filter"><input type="checkbox" id="export-filtered" checked /> Export filtered results only</label>
+        </div>
+        <button id="export-btn" class="export-btn"><i class="fas fa-file-export"></i> Export</button>
+      </div>
+
+      <div class="main-content">
+        <div class="results-container">
+          <div class="results-list" id="results-list"></div>
+          <div class="detail-view" id="detail-view">
+            <div class="placeholder"><i class="fas fa-search-plus"></i><p>Select a finding to view details</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>© 2025 <strong>NucleiUI</strong> — Built for hackers by <a href="https://x.com/Section31D" target="_blank">Section31D</a></p>
+    </footer>
+  </div>
+</body>
+</html>
