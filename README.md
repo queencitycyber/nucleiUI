@@ -15,7 +15,7 @@ No more staring at raw JSON files or scrolling through endless terminal output. 
 ## 🚀 Getting Started
 
 ### Option 1: Use the Live Version
-👉 Visit the [Live Demo](https://github.com/queencitycyber/nucleiUI) to use NucleiUI directly in your browser!
+👉 Visit the [Live Demo]([https://github.com/queencitycyber/nucleiUI](https://queencitycyber.github.io/nucleiUI/)) to use NucleiUI directly in your browser!
 
 ### Option 2: Run Locally
 
